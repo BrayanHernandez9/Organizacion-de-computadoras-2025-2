@@ -22,13 +22,18 @@ _start:                     ;tell linker entry point
 
     inc dword[N]
 
-    mov eax, dword[N]
+    mov eax, dword [N]
+    mov ax, 0xFF
+    div bx
 
+    idiv bx
+    add word[N], 0x0000031D
+
+    POP ax
     call pHex_dw
-    
     mov al,10
 	call putchar
-
+    
 
 	mov eax, 1	;system call number (sys_exit) -- fin del programa
 	int 0x80        ;call kernel
