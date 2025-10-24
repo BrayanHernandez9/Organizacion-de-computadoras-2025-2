@@ -7,10 +7,15 @@ section	.text
 _start:                     ;tell linker entry point
 
     mov cx, 0x3F48 ; resultado esperado 0xFA40
-    shr cx, 1
+	shr cx, 1
+	shl cl, 1
+    ;shr cx, 2
+	;shl cx, 1
+	;shr ch, 1
+	;shl cx, 1
     
     add eax, ecx
-	call pHex_w
+	call pHex_dw
 
 	mov al,10	
 	call putchar
