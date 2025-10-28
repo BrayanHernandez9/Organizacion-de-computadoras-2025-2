@@ -17,7 +17,7 @@ _start:                     ;tell linker entry point
 
 	pop eax
 	ror eax, 1
-	call pHex_dw
+	call pBin_dw
 	push eax
 
 	mov al,10	
@@ -25,7 +25,7 @@ _start:                     ;tell linker entry point
 
 	pop eax
 	ror eax, 1
-	call pHex_dw
+	call pBin_dw
 	push eax
 
 	mov al,10	
